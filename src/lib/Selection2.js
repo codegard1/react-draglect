@@ -17,14 +17,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
-/*
- *
- *
- *
- *
- * ~~~ Selection
- *
- */
+
 class Selection2 extends Component {
 
   constructor (props) {
@@ -128,53 +121,4 @@ Selection2.defaultProps = {
   }
 }
 
-/*
- *
- *
- *
- *
- * ~~~ SelectionItem
- *
- */
-class SelectionItem2 extends Component {
-
-  constructor (props) {
-    super(props)
-    this.state = {}
-  }
-
-  shouldComponentUpdate (nextProps, nextState) {
-    return this.state.isSelected !== nextState.isSelected
-  }
-
-  render () {
-    let {className, style, styleIfSelected, children, ...other} = this.props
-    if (this.state.isSelected) style = {...style, ...styleIfSelected}
-    if (this.state.isSelected) className += ' rds-item--selected'
-    return <div className={className} style={style} {...other}>{children}</div>
-  }
-}
-
-SelectionItem2.propTypes = {
-  className      : PropTypes.string,
-  style          : PropTypes.object,
-  styleIfSelected: PropTypes.object
-}
-
-SelectionItem2.defaultProps = {
-  className      : '',
-  style          : {},
-  styleIfSelected: {
-    background: 'rgba(0, 162, 255, 0.4)'
-  }
-}
-
-/*
- *
- *
- *
- *
- * ~~~ export
- *
- */
-export { Selection2, SelectionItem2 }
+export default Selection2;
